@@ -8,10 +8,15 @@ import Bubble from './components/Bubble.vue';
 
 const pinecone = ref(null);
 const index = ref(null);
+const histories = ref([]);
 
 onMounted(async () => {
-  pinecone.value = new Pinecone({ apiKey: '7eb750c0-2b55-47f6-a3c0-cd7994703b21' });
-  index.value = pinecone.value.index('airline-sentiment-analysis');
+  pinecone.value = new Pinecone({ apiKey: import.meta.env.VITE_PINECONE_API_KEY });
+  index.value = pinecone.value.index(import.meta.env.VITE_PINECONE_INDEX);
+  histories.value.push({
+    message: 'Hello, I am Pinecone. How can I help you?',
+    isUser: false,
+  });
 })
 </script>
 
@@ -21,7 +26,7 @@ onMounted(async () => {
   </nav>
   <main class="container mx-auto">
     <div class="mb-8">
-      <Bubble />
+      <Bubble v-for="history in histories" :isUser="history.isUser" :message="history.message" />
     </div>
     <div>
       <Input />
