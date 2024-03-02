@@ -1,6 +1,6 @@
 <template>
     <header>
-        <nav class="border-gray-200 px-4 py-2 bg-indigo-950">
+        <nav class="border-gray-200 px-4 py-2 bg-blue-950">
             <div class="flex flex-wrap justify-between items-center mx-auto container">
                 <a href="https://flowbite.com" class="flex items-center">
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Airline Sentiment Analyzer</span>
