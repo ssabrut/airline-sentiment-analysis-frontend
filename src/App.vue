@@ -14,7 +14,7 @@ onMounted(async () => {
   pinecone.value = new Pinecone({ apiKey: import.meta.env.VITE_PINECONE_API_KEY });
   index.value = pinecone.value.index(import.meta.env.VITE_PINECONE_INDEX);
   histories.value.push({
-    message: 'Hello, I am Pinecone. How can I help you?',
+    message: 'Hello, I am Airline Sentiment Bot. Start Writing Your Comments and I will analyze them for you.',
     isUser: false,
   });
 })
